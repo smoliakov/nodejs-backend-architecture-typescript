@@ -14,10 +14,10 @@ import profile from './profile';
 const router = express.Router();
 
 /*---------------------------------------------------------*/
-router.use(apikey);
+// router.use(apikey);
 /*---------------------------------------------------------*/
 /*---------------------------------------------------------*/
-router.use(permission(Permission.GENERAL));
+// router.use(permission(Permission.GENERAL));
 /*---------------------------------------------------------*/
 router.use('/signup', signup);
 router.use('/login', login);

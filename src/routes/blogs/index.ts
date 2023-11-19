@@ -7,7 +7,7 @@ import { BadRequestError } from '../../core/ApiError';
 import BlogRepo from '../../database/repository/BlogRepo';
 import { Types } from 'mongoose';
 import User from '../../database/model/User';
-import BlogsCache from '../../cache/repository/BlogsCache';
+// import BlogsCache from '../../cache/repository/BlogsCache';
 
 const router = express.Router();
 
@@ -48,26 +48,26 @@ router.get(
   }),
 );
 
-router.get(
-  '/similar/id/:id',
-  validator(schema.blogId, ValidationSource.PARAM),
-  asyncHandler(async (req, res) => {
-    const blogId = new Types.ObjectId(req.params.id);
-    let blogs = await BlogsCache.fetchSimilarBlogs(blogId);
-
-    if (!blogs) {
-      const blog = await BlogRepo.findInfoForPublishedById(
-        new Types.ObjectId(req.params.id),
-      );
-      if (!blog) throw new BadRequestError('Blog is not available');
-      blogs = await BlogRepo.searchSimilarBlogs(blog, 6);
-
-      if (blogs && blogs.length > 0)
-        await BlogsCache.saveSimilarBlogs(blogId, blogs);
-    }
-
-    return new SuccessResponse('success', blogs ? blogs : []).send(res);
-  }),
-);
+// router.get(
+//   '/similar/id/:id',
+//   validator(schema.blogId, ValidationSource.PARAM),
+//   asyncHandler(async (req, res) => {
+//     const blogId = new Types.ObjectId(req.params.id);
+//     let blogs = await BlogsCache.fetchSimilarBlogs(blogId);
+//
+//     if (!blogs) {
+//       const blog = await BlogRepo.findInfoForPublishedById(
+//         new Types.ObjectId(req.params.id),
+//       );
+//       if (!blog) throw new BadRequestError('Blog is not available');
+//       blogs = await BlogRepo.searchSimilarBlogs(blog, 6);
+//
+//       if (blogs && blogs.length > 0)
+//         await BlogsCache.saveSimilarBlogs(blogId, blogs);
+//     }
+//
+//     return new SuccessResponse('success', blogs ? blogs : []).send(res);
+//   }),
+// );
 
 export default router;

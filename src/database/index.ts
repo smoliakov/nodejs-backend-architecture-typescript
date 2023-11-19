@@ -3,9 +3,11 @@ import Logger from '../core/Logger';
 import { db } from '../config';
 
 // Build the connection string
-const dbURI = `mongodb://${db.user}:${encodeURIComponent(db.password)}@${
-  db.host
-}:${db.port}/${db.name}`;
+// const dbURI = `mongodb://${db.user}:${encodeURIComponent(db.password)}@${
+//   db.host
+// }:${db.port}/${db.name}`;
+
+const dbURI = `mongodb+srv://${db.user}:${db.password}@cluster83752.qlp1f1h.mongodb.net/gridfit?retryWrites=true&w=majority`
 
 const options = {
   autoIndex: true,
@@ -31,7 +33,7 @@ mongoose
     schema.pre('updateOne', setRunValidators);
     schema.pre('update', setRunValidators);
   })
-  .connect(dbURI, options)
+  .connect(dbURI)
   .then(() => {
     Logger.info('Mongoose connection done');
   })
