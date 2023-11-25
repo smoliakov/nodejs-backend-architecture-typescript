@@ -15,12 +15,11 @@ Note: This is the **latest (version 2)** of the project. If you are using **vers
 2. Express.js
 3. Typescript
 4. Mongoose
-5. Redis
-6. Mongodb
-7. Joi
-8. Unit Tests & Integration Tests
-9. Docker
-10. JWT
+5. Mongodb
+6. Joi
+7. Unit Tests & Integration Tests
+8. Docker
+9. JWT
 
 # About The Project
 This project is designed for a production ready environment. It can handle the scale and complexity of a very demanding application. This project is being used by companies like MindOrks, AfterAcademy, and CuriousJr. Apps/Websites having 10+ million usebase.
@@ -43,7 +42,6 @@ Following are the features of this project:
 * **Centralised Error handling**: I have created a framework where all the errors are handled centrally. This reduces the ambiguity in the development when the project grows larger.
 * **Centralised Response handling**: Similar to Error handling we have a response handling framework. This makes it very convenient to apply a common API response pattern.
 * **Mongodb is used through Mongoose**: Mongodb fits very well to the node.js application. Being NoSQL, fast, and scalable makes it ideal for modern web applications.
-* **Redis Memcache**: I have used the redis server for caching the items which does not change frequently. It will boost the performance of our system.
 * **Async execution**: I have used async/await for the promises and made sure to use the non-blocking version of all the functions with few exceptions.
 * **Docker compose has been configured**: I have created the Dockerfile to provide the easy deployability without any setup and configurations. 
 * **Unit test is favored**: The tests have been written to test the functions and routes without the need of the database server. Integration tests has also been done but the unit test is favored.
