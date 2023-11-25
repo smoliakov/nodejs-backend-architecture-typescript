@@ -1,5 +1,6 @@
-import User from '../../database/model/User';
 import _ from 'lodash';
+
+import User from '../../database/model/User';
 
 export const enum AccessMode {
   LOGIN = 'LOGIN',

@@ -1,6 +1,7 @@
-import { RoleCode } from '../database/model/Role';
 import { RoleRequest } from 'app-request';
-import { Response, NextFunction } from 'express';
+import { NextFunction,Response } from 'express';
+
+import { RoleCode } from '../database/model/Role';
 
 export default (...roleCodes: RoleCode[]) =>
   (req: RoleRequest, res: Response, next: NextFunction) => {

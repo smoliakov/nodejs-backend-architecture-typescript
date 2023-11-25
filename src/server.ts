@@ -1,6 +1,6 @@
 import Logger from './core/Logger';
-import { port } from './config';
 import app from './app';
+import { port } from './config';
 
 app
   .listen(port, () => {

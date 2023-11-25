@@ -1,13 +1,15 @@
+import { ProtectedRequest } from 'app-request';
 import express from 'express';
+import _ from 'lodash';
+
+import authentication from '../../auth/authentication';
+import { BadRequestError } from '../../core/ApiError';
 import { SuccessResponse } from '../../core/ApiResponse';
 import UserRepo from '../../database/repository/UserRepo';
-import { ProtectedRequest } from 'app-request';
-import { BadRequestError } from '../../core/ApiError';
-import validator from '../../helpers/validator';
-import schema from './schema';
 import asyncHandler from '../../helpers/asyncHandler';
-import _ from 'lodash';
-import authentication from '../../auth/authentication';
+import validator from '../../helpers/validator';
+
+import schema from './schema';
 
 const router = express.Router();
 

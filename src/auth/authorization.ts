@@ -1,5 +1,6 @@
-import express from 'express';
 import { ProtectedRequest } from 'app-request';
+import express from 'express';
+
 import { AuthFailureError } from '../core/ApiError';
 import RoleRepo from '../database/repository/RoleRepo';
 import asyncHandler from '../helpers/asyncHandler';

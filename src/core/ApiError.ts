@@ -1,12 +1,14 @@
 import { Response } from 'express';
+
 import { environment } from '../config';
+
 import {
-  AuthFailureResponse,
   AccessTokenErrorResponse,
-  InternalErrorResponse,
-  NotFoundResponse,
+  AuthFailureResponse,
   BadRequestResponse,
   ForbiddenResponse,
+  InternalErrorResponse,
+  NotFoundResponse,
 } from './ApiResponse';
 
 export enum ErrorType {

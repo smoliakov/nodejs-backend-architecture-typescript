@@ -1,4 +1,4 @@
-import { Schema, model, Types } from 'mongoose';
+import { model, Schema, Types } from 'mongoose';
 
 export const DOCUMENT_NAME = 'Role';
 export const COLLECTION_NAME = 'roles';

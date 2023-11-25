@@ -1,4 +1,5 @@
 import Joi from 'joi';
+
 import { JoiAuthBearer } from '../../helpers/validator';
 
 export default {

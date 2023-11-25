@@ -4,17 +4,60 @@
     "@typescript-eslint/ban-ts-comment": "off",
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/explicit-function-return-types": "off",
-    "@typescript-eslint/explicit-module-boundary-types": "off"
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "simple-import-sort/imports": [
+      "warn",
+      {
+        "groups": [
+          [
+            // Node.js
+            "^(path)$",
+            // `react`
+            "^react",
+            // abs path
+            "^\\w"
+          ],
+          [
+            // start from `@/`
+            "^@\/"
+          ],
+          [
+            // rel path `../`
+            "^\\.\\.(?!/?$)",
+            "^\\.\\./?$"
+          ],
+          [
+            // rel path `./`
+            "^\\./(?=.*/)(?!/?$)",
+            "\\.(?!/?$)",
+            "^\\./?$"
+          ],
+          [
+            "(styled)$",
+            "(styles)",
+            "^\\./styled",
+            "^\\./styles",
+            // стили
+            "^.+\\.css$",
+            "^.+\\.scss$"
+          ]
+        ]
+      }
+    ],
+    "simple-import-sort/exports": "warn"
   },
   "extends": [
-    "plugin:@typescript-eslint/recommended" // Uses the recommended rules from the @typescript-eslint/eslint-plugin
+    "plugin:@typescript-eslint/recommended"
+    // Uses the recommended rules from the @typescript-eslint/eslint-plugin
   ],
+  "plugins": ["simple-import-sort"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaVersion": "latest", // Allows for the parsing of modern ECMAScript features
-    "sourceType": "module" // Allows for the use of imports
+    "ecmaVersion": "latest",
+    // Allows for the parsing of modern ECMAScript features
+    "sourceType": "module"
+    // Allows for the use of imports
   },
-
   "env": {
     "node": true
   }

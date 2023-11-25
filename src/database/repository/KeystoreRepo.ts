@@ -1,5 +1,6 @@
-import Keystore, { KeystoreModel } from '../model/Keystore';
 import { Types } from 'mongoose';
+
+import Keystore, { KeystoreModel } from '../model/Keystore';
 import User from '../model/User';
 
 async function findforKey(client: User, key: string): Promise<Keystore | null> {

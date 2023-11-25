@@ -1,15 +1,15 @@
-import express, { Request, Response, NextFunction } from 'express';
-import Logger from './core/Logger';
 import cors from 'cors';
-import { corsUrl, environment } from './config';
-import './database'; // initialize database
-// import './cache'; // initialize cache
+import express, { NextFunction,Request, Response } from 'express';
+
 import {
-  NotFoundError,
   ApiError,
-  InternalError,
   ErrorType,
+  InternalError,
+  NotFoundError,
 } from './core/ApiError';
+import Logger from './core/Logger';
+import './database'; // initialize database
+import { corsUrl, environment } from './config';
 import routes from './routes';
 
 process.on('uncaughtException', (e) => {

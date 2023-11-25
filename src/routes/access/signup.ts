@@ -1,16 +1,18 @@
-import express from 'express';
-import { SuccessResponse } from '../../core/ApiResponse';
 import { RoleRequest } from 'app-request';
-import crypto from 'crypto';
-import UserRepo from '../../database/repository/UserRepo';
-import { BadRequestError } from '../../core/ApiError';
-import User from '../../database/model/User';
-import { createTokens } from '../../auth/authUtils';
-import validator from '../../helpers/validator';
-import schema from './schema';
-import asyncHandler from '../../helpers/asyncHandler';
 import bcrypt from 'bcrypt';
+import crypto from 'crypto';
+import express from 'express';
+
+import { createTokens } from '../../auth/authUtils';
+import { BadRequestError } from '../../core/ApiError';
+import { SuccessResponse } from '../../core/ApiResponse';
 import { RoleCode } from '../../database/model/Role';
+import User from '../../database/model/User';
+import UserRepo from '../../database/repository/UserRepo';
+import asyncHandler from '../../helpers/asyncHandler';
+import validator from '../../helpers/validator';
+
+import schema from './schema';
 import { getUserData } from './utils';
 
 const router = express.Router();

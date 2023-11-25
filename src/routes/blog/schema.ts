@@ -1,4 +1,5 @@
 import Joi from 'joi';
+
 import { JoiObjectId, JoiUrlEndpoint } from '../../helpers/validator';
 
 export default {

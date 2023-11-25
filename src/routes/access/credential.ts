@@ -1,19 +1,21 @@
-import express from 'express';
-import { SuccessResponse } from '../../core/ApiResponse';
 import { RoleRequest } from 'app-request';
-import UserRepo from '../../database/repository/UserRepo';
-import { BadRequestError } from '../../core/ApiError';
-import User from '../../database/model/User';
-import validator from '../../helpers/validator';
-import schema from './schema';
-import asyncHandler from '../../helpers/asyncHandler';
 import bcrypt from 'bcrypt';
+import express from 'express';
 import _ from 'lodash';
-import { RoleCode } from '../../database/model/Role';
-import role from '../../helpers/role';
-import authorization from '../../auth/authorization';
+
 import authentication from '../../auth/authentication';
+import authorization from '../../auth/authorization';
+import { BadRequestError } from '../../core/ApiError';
+import { SuccessResponse } from '../../core/ApiResponse';
+import { RoleCode } from '../../database/model/Role';
+import User from '../../database/model/User';
 import KeystoreRepo from '../../database/repository/KeystoreRepo';
+import UserRepo from '../../database/repository/UserRepo';
+import asyncHandler from '../../helpers/asyncHandler';
+import role from '../../helpers/role';
+import validator from '../../helpers/validator';
+
+import schema from './schema';
 
 const router = express.Router();
 
